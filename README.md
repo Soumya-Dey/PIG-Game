@@ -8,4 +8,4 @@ Head over to this [link](Soumya-Dey.github.io) to enjoy the game.
 
 ## Screenshots
 
-<img src="Screenshot.png" width="600px">
+<img src="sc.png" width="600px">
