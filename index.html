@@ -5,8 +5,8 @@
         <link href="https://fonts.googleapis.com/css?family=Montserrat:200,400,500&display=swap" rel="stylesheet">
         <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
         <link type="text/css" rel="stylesheet" href="style.css">
-	    
-	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
         <link rel="icon" href="favicon.png" sizes="32x32" type="image/png">
         
         <title>Pig Game</title>
@@ -17,12 +17,12 @@
 		<div class="game-rules">
 			<ul>
 				<li>The game has 2 players, playing in rounds</li>
-				<li>In each turn, a player rolls a dice as many times as he whishes</li>
+				<li>In each turn, a player rolls 2 dice as many times as he whishes</li>
 				<li>Each result get added to his ROUND score</li>
-				<li>BUT, if the player rolls a 1, all his ROUND score gets lost</li>
-				<li>After that, it's the next player's turn</li>
+                <li>If the player rolls a 1 then his ROUND score gets lost</li>
 				<li>The player can choose to 'Hold' to add ROUND score to GLOBAL score</li>
-				<li>The first player to reach 100 points on GLOBAL score wins the game</li>
+                <li>The first player to reach 100 points on GLOBAL score wins the game</li>
+                <li>You can enter your choice of final score and then play with that score</li>
 			</ul>
 		</div>
 
@@ -49,9 +49,12 @@
             <button class="btn-roll"><i class="ion-ios-loop"></i>Roll dice</button>
             <button class="btn-hold"><i class="ion-ios-download-outline"></i>Hold</button>
 
+            <input type="text" name="Final score" placeholder="Final score" id="final-score">
+
             <p>This game is made with <span>&hearts;</span> by <a href="https://github.com/Soumya-Dey" target="_blank">Soumya</a></p>
             
-            <img src="dice-5.png" alt="Dice" class="dice">
+            <img src="dice-5.png" alt="Dice" class="dice" id="dice-1">
+            <img src="dice-3.png" alt="Dice" class="dice" id="dice-2">
         </div>
         
         <script src="app.js"></script>
