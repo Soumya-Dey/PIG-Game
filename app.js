@@ -51,6 +51,7 @@ function init() {
     panel0Dom.classList.add("active");
     btnRollDom.style.display = "block";
     btnHoldDom.style.display = "block";
+    scoreInputDom.style.display = "block";
 }
 
 // function for toggle the active player
@@ -65,6 +66,40 @@ function togglePlayer() {
     diceDom.style.display = "none";
     dice1Dom.style.display = "none";
 }
+
+function themeChanger(imageSrc, srcDomId) {
+    document.body.style.backgroundImage = "linear-gradient(rgba(62, 20, 20, 0.4), rgba(62, 20, 20, 0.4)), url(" + imageSrc + ")";
+    document.getElementById(srcDomId).classList.add("active");
+}
+
+document.getElementById("cool-li").addEventListener("click", function(){
+    themeChanger("back_cool.png", "cool-li");
+    document.getElementById("breeze-li").classList.remove("active");
+    document.getElementById("bright-li").classList.remove("active");
+    document.getElementById("summer-li").classList.remove("active");
+})
+
+document.getElementById("breeze-li").addEventListener("click", function(){
+    themeChanger("back_breeze.png", "breeze-li");
+    document.getElementById("cool-li").classList.remove("active");
+    document.getElementById("bright-li").classList.remove("active");
+    document.getElementById("summer-li").classList.remove("active");
+})
+
+document.getElementById("bright-li").addEventListener("click", function(){
+    themeChanger("back_bright.png", "bright-li");
+    document.getElementById("breeze-li").classList.remove("active");
+    document.getElementById("cool-li").classList.remove("active");
+    document.getElementById("summer-li").classList.remove("active");
+})
+
+document.getElementById("summer-li").addEventListener("click", function(){
+    themeChanger("back_summer.png", "summer-li");
+    document.getElementById("breeze-li").classList.remove("active");
+    document.getElementById("bright-li").classList.remove("active");
+    document.getElementById("cool-li").classList.remove("active");
+})
+
 
 document.querySelector(".btn-roll").addEventListener("click", function () {
     if (gameIsNotFinished) {
@@ -96,12 +131,15 @@ document.querySelector(".btn-hold").addEventListener("click", function () {
 
         var winingScore;
         var input = scoreInputDom.value;
-        if(input) winingScore = input;
+        if (input) winingScore = input;
         else winingScore = 100;
 
         // checking if the active player has won
         var playerNameDom = document.getElementById("name-" + activePlayer);
         if (scores[activePlayer] >= winingScore) {
+            var winningAudio = new Audio("winning-sound.wav");
+            winningAudio.play();
+
             playerNameDom.textContent = "WINNER! PLAYER " + (activePlayer + 1);
             diceDom.style.display = "none";
             dice1Dom.style.display = "none";
@@ -110,9 +148,7 @@ document.querySelector(".btn-hold").addEventListener("click", function () {
             document.querySelector(".player-" + (1 - activePlayer) + "-panel").classList.add("loser");
             btnRollDom.style.display = "none";
             btnHoldDom.style.display = "none";
-
-            var winningAudio = new Audio("winning-sound.wav");
-            winningAudio.play();
+            scoreInputDom.style.display = "none";
 
             gameIsNotFinished = false; // means that the game has finished
         } else {

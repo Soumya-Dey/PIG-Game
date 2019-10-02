@@ -1,62 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:200,400,500&display=swap" rel="stylesheet">
-        <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
-        <link type="text/css" rel="stylesheet" href="style.css">
 
-        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-        <link rel="icon" href="favicon.png" sizes="32x32" type="image/png">
-        
-        <title>Pig Game</title>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:200,400,500&display=swap" rel="stylesheet">
+    <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
+    <link type="text/css" rel="stylesheet" href="style.css">
 
-    <body>
-        <div class="btn-help"><i class="ion-ios-help-outline"></i></div>
-		<div class="game-rules">
-			<ul>
-				<li>The game has 2 players, playing in rounds</li>
-				<li>In each turn, a player rolls 2 dice as many times as he whishes</li>
-				<li>Each result get added to his ROUND score</li>
-                <li>If the player rolls a 1 then his ROUND score gets lost</li>
-				<li>The player can choose to 'Hold' to add ROUND score to GLOBAL score</li>
-                <li>The first player to reach 100 points on GLOBAL score wins the game</li>
-                <li>You can enter your choice of final score and then play with that score</li>
-			</ul>
-		</div>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.png" sizes="32x32" type="image/png">
 
-        <div class="wrapper clearfix">
-            <div class="player-0-panel active">
-                <div class="player-name" id="name-0">Player 1</div>
-                <div class="player-score" id="score-0">43</div>
-                <div class="player-current-box">
-                    <div class="player-current-label">Current</div>
-                    <div class="player-current-score" id="current-0">11</div>
-                </div>
-            </div>
-            
-            <div class="player-1-panel">
-                <div class="player-name" id="name-1">Player 2</div>
-                <div class="player-score" id="score-1">72</div>
-                <div class="player-current-box">
-                    <div class="player-current-label">Current</div>
-                    <div class="player-current-score" id="current-1">0</div>
-                </div>
-            </div>
-            
-            <button class="btn-new"><i class="ion-ios-plus-outline"></i>New game</button>
-            <button class="btn-roll"><i class="ion-ios-loop"></i>Roll dice</button>
-            <button class="btn-hold"><i class="ion-ios-download-outline"></i>Hold</button>
+    <title>Pig Game</title>
+</head>
 
-            <input type="text" name="Final score" placeholder="Final score" id="final-score">
+<body>
+    <div class="btn-help"><i class="icon ion-ios-help-outline"></i></div>
+    <div class="game-rules">
+        <ul>
+            <li>The game has 2 players, playing in rounds</li>
+            <li>In each turn, a player rolls 2 dice as many times as he whishes</li>
+            <li>Each result get added to his ROUND score</li>
+            <li>If the player rolls a 1 then his ROUND score gets lost</li>
+            <li>The player can choose to 'Hold' to add ROUND score to GLOBAL score</li>
+            <li>The first player to reach 100 points on GLOBAL score wins the game</li>
+            <li>You can enter your choice of final score and then play with that score</li>
+        </ul>
+    </div>
 
-            <p>This game is made with <span>&hearts;</span> by <a href="https://github.com/Soumya-Dey" target="_blank">Soumya</a></p>
-            
-            <img src="dice-5.png" alt="Dice" class="dice" id="dice-1">
-            <img src="dice-3.png" alt="Dice" class="dice" id="dice-2">
+    <div class="dropdown">
+        <div class="dropbtn">Themes &#9660;</div>
+        <div class="drop-content">
+            <ul>
+                <li id="cool-li" class="active">Frosty</li>
+                <li id="breeze-li">Breeze</li>
+                <li id="bright-li">Bright</li>
+                <li id="summer-li">Summer</li>
+            </ul>
         </div>
-        
-        <script src="app.js"></script>
-    </body>
+    </div>
+
+    <div class="wrapper clearfix">
+        <div class="player-0-panel active">
+            <div class="player-name" id="name-0">Player 1</div>
+            <div class="player-score" id="score-0">43</div>
+            <div class="player-current-box">
+                <div class="player-current-label">Current</div>
+                <div class="player-current-score" id="current-0">11</div>
+            </div>
+        </div>
+
+        <div class="player-1-panel">
+            <div class="player-name" id="name-1">Player 2</div>
+            <div class="player-score" id="score-1">72</div>
+            <div class="player-current-box">
+                <div class="player-current-label">Current</div>
+                <div class="player-current-score" id="current-1">0</div>
+            </div>
+        </div>
+
+        <button class="btn-new"><i class="icon ion-ios-plus-outline"></i>New game</button>
+        <button class="btn-roll"><i class="icon ion-ios-loop"></i>Roll dice</button>
+        <button class="btn-hold"><i class="icon ion-ios-download-outline"></i>Hold</button>
+
+        <input type="text" name="Final score" placeholder="Final score" id="final-score">
+
+        <p>This game is made with <span>&hearts;</span> by <a href="https://github.com/Soumya-Dey"
+                target="_blank">Soumya</a></p>
+
+        <img src="dice-5.png" alt="Dice" class="dice" id="dice-1">
+        <img src="dice-3.png" alt="Dice" class="dice" id="dice-2">
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
 </html>
