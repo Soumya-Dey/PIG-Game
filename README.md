@@ -1,6 +1,6 @@
 # PIG GAME
 
-A simple board game made with vanilla javascript.
+A simple board game with a little twist made with vanilla javascript.
 
 ## Screenshots
 
